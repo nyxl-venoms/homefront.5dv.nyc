@@ -4,8 +4,10 @@
   "description": "Static website for 5 Deadly Venoms",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "pack": "webpack --config webpack-config.dev.js",
+    "build": "webpack --config webpack-config.prod.js",
+    "start": "webpack-dev-server --open --config webpack-config.dev.js"
+},
   "repository": {
     "type": "git",
     "url": "https://unndunn.visualstudio.com/DefaultCollection/5DV/_git/Static"
