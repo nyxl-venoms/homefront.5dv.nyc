@@ -10,7 +10,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin(
             {
-                title: "5 Deadly Venoms"
+                title: "5 Deadly Venoms",
+                template: "./src/index.ejs"
             }
         )
     ],
@@ -34,6 +35,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
             {
                 test: /\.s[ac]ss$/,
                 use: [
