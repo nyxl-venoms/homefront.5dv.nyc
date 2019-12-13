@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2:700|Exo:800|Play:700|Share+Tech+Mono|Titillium+Web')
 @import './functions.sass'
 @import './bpmaps.scss'
 
+$display-font: 'Exo 2', sans-serif
+$display-font-alt: 'Exo', sans-serif
+$heading-font: 'Play', sans-serif
+$body-font: 'Titillium Web', sans-serif
+$monospace-font: 'Share Tech Mono', monospace
+$social-font: 'SocIcons', monospace
 $font-sizes: (p, bq, ssh, sh, h, hero)
 
 =generate-font-properties($label, $base-font-size, $base-line-height, $scale)
@@ -38,6 +45,12 @@ $font-sizes: (p, bq, ssh, sh, h, hero)
                 +generate-font-properties($label, $bsf, $blh, $s)
 
 
-h1
-    @extend %h
-@debug "Built _typography.sass"
+
+h1, h2, h3, h4, h5, h6
+    font-family: $heading-font
+
+p, ol, ul
+    font-family: $body-font
+
+code, pre
+    font-family: $monospace-font
