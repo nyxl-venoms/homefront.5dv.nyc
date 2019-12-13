@@ -28,11 +28,15 @@ h1
             margin: $base-line-height / 4
             padding: $base-line-height / 2
             min-width: $base-line-height * 4
-            max-width: $base-line-height * 6
+            max-width: $base-line-height * 7
             flex: 1 1 auto
 
             > h3
                 text-align: center;
+                display: block
+                height: $base-line-height * 2
+                background: center center / auto $base-line-height * 2 no-repeat
+                +background-replacement
 
             > .copy
                 flex: 1 0 auto;
@@ -43,6 +47,16 @@ h1
                     margin: 0 auto
                     font-family: $heading-font
                     @extend %bq
+
+            &#universitySettlement > h3
+                background-image: url('../images/5DV_University Settlement.png')
+            &#lonestarVanguard > h3
+                background-image: url('../images/LSV_Logo.png')
+            &#atlRF > h3
+                background-image: url('../images/ATL_Logo.png')
+            &#torontoAF > h3
+                background-image: url('../images/Toronto AF_Logo.png')
+            
 
 
     > header, > footer

@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: {
@@ -13,11 +15,15 @@ module.exports = {
                 title: "5 Deadly Venoms",
                 template: "./src/index.ejs"
             }
-        )
+        ),
+        new MiniCssExtractPlugin({
+            filename: devMode ? '[name].css' : '[name].[hash].css',
+            chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+        })
     ],
     output: {
-        filename: '[name].[hash].js',
-        chunkFilename: '[name].[hash].js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[id].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     optimization: {
@@ -45,8 +51,15 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    'style-loader',
-                    'css-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: process.env.NODE_ENV === 'development',
+                        },
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
                     {
                         loader: 'resolve-url-loader'
                     },
@@ -62,6 +75,18 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    'file-loader?name=[name].[ext]',
+                    'extract-loader',
+                    'html-loader'
+                ]
             }
         ]
     },
