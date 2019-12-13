@@ -1,16 +1,49 @@
 @import './_colors.sass'
 @import './_typography.sass'
-    
+
+body
+    background-color: $background-color
+    color: $foreground-color
 h1
+    +hide-text
     color: red
 
 .pricingTiers 
     h2
-        text-align: center;
+        text-align: center
 
     .tiers
-        display: flex;
-        list-style-type: none;
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        list-style-type: none
+        margin: 0 $base-line-height / 4
+        padding: 0
 
         > li
-            
+            display: flex
+            flex-flow: column nowrap
+            justify-content: space-between
+            background-color: fade-out($highlight-color, 0.5)
+            margin: $base-line-height / 4
+            padding: $base-line-height / 2
+            min-width: $base-line-height * 4
+            max-width: $base-line-height * 6
+            flex: 1 1 auto
+
+            > h3
+                text-align: center;
+
+            > .copy
+                flex: 1 0 auto;
+
+            > .cta 
+                button, a
+                    display: block
+                    margin: 0 auto
+                    font-family: $heading-font
+                    @extend %bq
+
+
+    > header, > footer
+        margin: $base-line-height / 2

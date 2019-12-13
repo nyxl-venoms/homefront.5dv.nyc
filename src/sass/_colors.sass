@@ -2,3 +2,13 @@
 $primary-color: rgb(19, 27, 55)
 $highlight-color: rgb(238, 40, 48)
 
+$secondary-color: scale-color($primary-color, $saturation: -50%, $lightness: 20%)
+$tertiary-color: scale-color($primary-color, $saturation: 50%, $lightness: -20%)
+$quadrary-color: scale-color($primary-color, $hue: 25%)
+
+$background-color: $secondary-color
+$foreground-color: adjust-color($background-color, $hue: 180deg, $saturation: -100%, $lightness: 100%)
+
+$link-color: desaturate($quadrary-color, 20%)
+$link-visited-color: mix($link-color, desaturate($highlight-color, 20%))
+
