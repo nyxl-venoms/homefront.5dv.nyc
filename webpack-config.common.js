@@ -18,12 +18,12 @@ module.exports = {
         ),
         new MiniCssExtractPlugin({
             filename: devMode ? '[name].css' : '[name].[hash].css',
-            chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+            chunkFilename: devMode ? '[name].css' : '[name].[hash].css',
         })
     ],
     output: {
         filename: '[name].bundle.js',
-        chunkFilename: '[id].bundle.js',
+        chunkFilename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     optimization: {
