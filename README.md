@@ -12,3 +12,6 @@ Please ensure you have Node and NPM installed.
 1. Run `npm install` in the root directory to install all required packages.
 2. Run `npm run build` to build and pack the site. The compiled result will be located in the `dist/` directory.
 3. Run `npm run start` to work on the site. It will launch the Webpack dev server and open a browser window at `http://localhost:8080` with the site visible. Webpack Hot Module Replacement will be active, so you can edit the files in `src/` and the result will be automatically loaded in the browser window.
+
+## Deployment
+This website will automatically deploy after pushing to the `master` branch.
