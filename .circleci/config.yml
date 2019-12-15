@@ -29,6 +29,7 @@ jobs:
           name: Run and package distributable
           command: |
             npm run build
+            echo "homefront.5dv.nyc" > dist/CNAME
             npm run deploy
 workflows:
   version: 2
