@@ -6,7 +6,8 @@
   "scripts": {
     "pack": "webpack --config webpack-config.dev.js",
     "build": "webpack --config webpack-config.prod.js",
-    "start": "webpack-dev-server --open --config webpack-config.dev.js"
+    "start": "webpack-dev-server --open --config webpack-config.dev.js",
+    "deploy": "gh-pages --message \"[skip ci] Updates\" --dist dist"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.1",
     "file-loader": "^5.0.2",
+    "gh-pages": "^2.1.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^6.0.0",
