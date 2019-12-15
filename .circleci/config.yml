@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12.11
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - attach_workspace:
+          at: dist/
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: 
+          name: Install and configure dependencies
+          command: |
+            npm ci
+            git config user.email "ci-build@5dv.nyc"
+            git config user.name "ci-build"
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: 
+          name: Run and package distributable
+          command: |
+            npm run build
+            gh-pages --dist dist
+workflows:
+  version: 2
+  deploy:
+      jobs:
+        - build:
+            filters:
+              branches:
+                only: master
