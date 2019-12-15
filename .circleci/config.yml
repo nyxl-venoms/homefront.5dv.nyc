@@ -20,7 +20,7 @@ jobs:
             git config user.name "ci-build"
       - add_ssh_keys:
           fingerprints:
-            - "bc:f5:7a:df:94:c6:e5:0d:a9:d9:13:5c:8d:95:1b:12"
+            - "89:ab:66:3f:7b:d0:14:4e:a0:bb:58:20:82:e8:d6:01"
       - save_cache:
           paths:
             - node_modules
