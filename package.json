@@ -6,7 +6,8 @@
   "scripts": {
     "pack": "webpack --config webpack-config.dev.js",
     "build": "webpack --config webpack-config.prod.js",
-    "start": "webpack-dev-server --open --config webpack-config.dev.js"
+    "start": "webpack-dev-server --open --config webpack-config.dev.js",
+    "deploy": "gh-pages --message \"[skip ci] Updates\" --dist dist"
   },
   "repository": {
     "type": "git",

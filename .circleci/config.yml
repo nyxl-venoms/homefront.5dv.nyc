@@ -18,6 +18,9 @@ jobs:
             npm ci
             git config user.email "ci-build@5dv.nyc"
             git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "bc:f5:7a:df:94:c6:e5:0d:a9:d9:13:5c:8d:95:1b:12"
       - save_cache:
           paths:
             - node_modules
@@ -26,7 +29,7 @@ jobs:
           name: Run and package distributable
           command: |
             npm run build
-            gh-pages --dist dist
+            npm run deploy
 workflows:
   version: 2
   deploy:
