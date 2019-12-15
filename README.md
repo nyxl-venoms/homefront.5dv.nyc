@@ -1,5 +1,7 @@
 # 5DV Homefront Charity Initiative Website
 
+[![CircleCI](https://circleci.com/gh/buzzedword/5dv-homefront.svg?style=svg&circle-token=105df127878a9f195f107a1b313eac314d3378e2)](https://circleci.com/gh/buzzedword/5dv-homefront)
+
 This is the source code for the 5DV Homefront Charity Initiative website. It is built using [Webpack](https://webpack.js.org) as the bundling and compiling tool.
 
 ## Build and run
