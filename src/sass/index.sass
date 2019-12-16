@@ -23,25 +23,33 @@ h1
         +breakpoint('medium')
             margin: 0 0 (0 - ($overhang * 2))
             padding: 0 0 $overhang * 2
-            height: $base-line-height * 6
-            background-size: contain
+            min-height: $base-line-height * 8
 
         h2
             text-align: center
-            @extend %h
+            @extend %sh
             margin: 0
+            /* color: $primary-color */
+            text-shadow: 2px 2px 2px $secondary-color
 
         .meta
             font-family: $heading-font
+            @extend %bq
             display: flex
             flex-flow: row wrap
             justify-content: center
-            +breakpoint('medium')
-                flex-flow: row nowrap
+            text-shadow: 2px 2px 2px $secondary-color
 
             div
                 margin: 0 $base-line-height / 4
                 white-space: nowrap
+
+                & + div
+                    margin-left: 0
+                    
+                    &::before
+                        content: "\25CF"
+                        margin-right: $base-line-height / 4
 
         
     > .content
