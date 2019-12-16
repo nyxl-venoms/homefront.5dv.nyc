@@ -12,15 +12,40 @@ h1
 
 .pricingTiers
     > header
-        margin: 0 0 -100
-        padding: 0
-        background: url('../images/Skyline_copy.png') bottom center / cover $foreground-color
-        height: 400px
+        $overhang: $base-line-height * 2
+        margin: 0 0 0 - $overhang
+        padding: 0 0 $overhang
+        min-height: $base-line-height * 2
+        background: url('../images/Skyline_copy.png') bottom center / cover no-repeat fade-out($foreground-color, 0.8)
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        +breakpoint('medium')
+            margin: 0 0 (0 - ($overhang * 2))
+            padding: 0 0 $overhang * 2
+            height: $base-line-height * 6
+            background-size: contain
 
         h2
             text-align: center
+            @extend %h
+            margin: 0
+
+        .meta
+            font-family: $heading-font
+            display: flex
+            flex-flow: row wrap
+            justify-content: center
+            +breakpoint('medium')
+                flex-flow: row nowrap
+
+            div
+                margin: 0 $base-line-height / 4
+                white-space: nowrap
 
         
+    > .content
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0), $background-color 50px)
 
     .tiers
         display: flex
