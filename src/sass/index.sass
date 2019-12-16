@@ -34,7 +34,7 @@ h1
             max-width: $base-line-height * 10
             flex: auto
 
-            > h3
+            > h3, h4
                 text-align: center;
                 display: block
                 height: $base-line-height * 2
@@ -51,8 +51,16 @@ h1
                     font-family: $heading-font
                     @extend %bq
 
-            &#nyxlVenoms > h3
-                background-image: url('../images/5DV_Logo_text.png')
+            &#nyxlVenoms 
+                > h3
+                    background-image: url('../images/5DV_Logo_text.png')
+                h4 
+                    background-image: url('../images/5DV_University Settlement.png')
+                .copy
+                    span.slogan
+                        text-align: center;
+                        font-weight: bold;
+                        display: block;
             &#lonestarVanguard > h3
                 background-image: url('../images/LSV_Logo.png')
             &#atlRF > h3
