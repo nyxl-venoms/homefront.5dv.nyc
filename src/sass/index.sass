@@ -10,9 +10,17 @@ h1
 
 
 
-.pricingTiers 
-    h2
-        text-align: center
+.pricingTiers
+    > header
+        margin: 0 0 -100
+        padding: 0
+        background: url('../images/Skyline_copy.png') bottom center / cover $foreground-color
+        height: 400px
+
+        h2
+            text-align: center
+
+        
 
     .tiers
         display: flex
@@ -31,7 +39,7 @@ h1
             background-color: fade-out($highlight-color, 0.5)
             margin: $base-line-height / 4
             padding: $base-line-height / 2
-            max-width: $base-line-height * 10
+            max-width: $base-line-height * 8
             flex: auto
 
             > h3, h4
@@ -68,5 +76,5 @@ h1
             &#torontoAF > h3
                 background-image: url('../images/Toronto AF_Logo.png')
 
-    > header, > footer
+    > footer
         margin: $base-line-height / 2
