@@ -92,7 +92,8 @@ h1
                     font-family: $heading-font
                     @extend %bq
 
-            &#nyxlVenoms 
+            &#nyxlVenoms
+                order: 1
                 > h3
                     background-image: url('../images/5DV_Logo_text.png')
                 h4 
@@ -102,12 +103,18 @@ h1
                         text-align: center;
                         font-weight: bold;
                         display: block;
-            &#lonestarVanguard > h3
-                background-image: url('../images/LSV_Logo.png')
-            &#atlRF > h3
-                background-image: url('../images/ATL_Logo_text.png')
-            &#torontoAF > h3
-                background-image: url('../images/Toronto AF_Logo.png')
+            &#lonestarVanguard
+                order: 3
+                > h3
+                    background-image: url('../images/LSV_Logo.png')
+            &#atlRF 
+                order: 2
+                > h3
+                    background-image: url('../images/ATL_Logo_text.png')
+            &#torontoAF
+                order: 4
+                > h3
+                    background-image: url('../images/Toronto AF_Logo.png')
 
     > footer
         margin: $base-line-height / 2
