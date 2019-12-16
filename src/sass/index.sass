@@ -10,9 +10,50 @@ h1
 
 
 
-.pricingTiers 
-    h2
-        text-align: center
+.pricingTiers
+    > header
+        $overhang: $base-line-height * 2
+        margin: 0 0 0 - $overhang
+        padding: 0 0 $overhang
+        min-height: $base-line-height * 2
+        background: url('../images/Skyline_copy.png') bottom center / cover no-repeat fade-out($foreground-color, 0.8)
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        +breakpoint('medium')
+            margin: 0 0 (0 - ($overhang * 2))
+            padding: 0 0 $overhang * 2
+            min-height: $base-line-height * 8
+
+        h2
+            text-align: center
+            @extend %sh
+            margin: 0
+            /* color: $primary-color */
+            text-shadow: 2px 2px 2px $secondary-color
+
+        .meta
+            font-family: $heading-font
+            @extend %bq
+            display: flex
+            flex-flow: row wrap
+            justify-content: center
+            text-shadow: 2px 2px 2px $secondary-color
+
+            div
+                margin: 0 $base-line-height / 4
+                white-space: nowrap
+
+                & + div
+                    margin-left: 0
+                    
+                    &::before
+                        content: "\25CF"
+                        margin-right: $base-line-height / 4
+
+        
+    > .content
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0), $background-color 50px)
 
     .tiers
         display: flex
@@ -31,7 +72,7 @@ h1
             background-color: fade-out($highlight-color, 0.5)
             margin: $base-line-height / 4
             padding: $base-line-height / 2
-            max-width: $base-line-height * 10
+            max-width: $base-line-height * 8
             flex: auto
 
             > h3, h4
@@ -68,5 +109,5 @@ h1
             &#torontoAF > h3
                 background-image: url('../images/Toronto AF_Logo.png')
 
-    > header, > footer
+    > footer
         margin: $base-line-height / 2
