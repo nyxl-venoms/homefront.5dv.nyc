@@ -8,8 +8,6 @@ h1
     +hide-text
     color: red
 
-
-
 .pricingTiers
     > header
         $overhang: $base-line-height * 2
@@ -86,11 +84,27 @@ h1
                 flex: 1 0 auto;
 
             > .cta 
-                button, a
+                button, a.donation
                     display: block
                     margin: 0 auto
                     font-family: $heading-font
+                    text-align: center;
+                    border: 0.1em solid #DADADA;
+                    border-radius: 0.12em;
+                    box-sizing: border-box;
+                    text-decoration: none;
+                    background-color:#F3F3F3
                     @extend %bq
+
+                a.donation:hover 
+                    color:#333333
+                    border: 0.1em solid #C6C6C6;
+                    background: #F7F7F7;
+                    box-shadow: 1px 1px 1px #EAEAEA;
+
+                a.donation:active
+                    box-shadow: inset 1px 1px 1px #DFDFDF;
+
 
             &#nyxlVenoms
                 order: 1
