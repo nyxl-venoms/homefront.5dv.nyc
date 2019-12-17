@@ -144,17 +144,38 @@ h1
 
     > footer
         margin: $base-line-height / 2
-        p
-            margin: 0 auto;
-        .partners
-            span
-                text-align: center
-                display: inline-block
-                height: 75px
-                background: center center / contain no-repeat
-                +background-replacement
+        display: flex
+        flex-flow: column nowrap
+        align-items: center
 
-                &.andbox
-                     background-image: url('../images/Andbox_Logo.png')
-                &.waypoint
-                     background-image: url('../images/Waypoint_Logo.png')
+        .aboutUs
+            text-align: center
+
+        .sponsorships
+            text-align: center
+            margin: $base-line-height / 2
+
+            .partners
+                list-style-type: none
+                display: flex
+                flex-flow: row wrap
+                justify-content: center
+                padding: 0
+                margin: $base-line-height / 2 0
+                
+                $logo-height: 75px
+
+                li a
+                    display: block
+                    height: $logo-height
+                    background: center / cover no-repeat rgba(0,0,0,0)
+                    margin: $base-line-height / 2 $base-line-height
+                    +background-replacement
+
+                #andbox a
+                    width: $logo-height / 1072 * 1600
+                    background-image: url('../images/Andbox_Logo.png')
+
+                #waypoint a
+                    width: $logo-height / 556 * 1432
+                    background-image: url('../images/Waypoint_Logo.png')
