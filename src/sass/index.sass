@@ -140,11 +140,17 @@ h1
 
     > footer
         margin: $base-line-height / 2
-
+        p
+            margin: 0 auto;
         .partners
             span
                 text-align: center
-                display: block
+                display: inline-block
                 height: 75px
                 background: center center / contain no-repeat
                 +background-replacement
+
+                &.andbox
+                     background-image: url('../images/Andbox_Logo.png')
+                &.waypoint
+                     background-image: url('../images/Waypoint_Logo.png')
