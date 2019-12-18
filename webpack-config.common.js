@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SocialTags = require('social-tags-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
@@ -12,8 +13,29 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin(
             {
-                title: "5 Deadly Venoms",
-                template: "./src/index.ejs"
+                title: "Homefront Supporter Series | December 22, 2019",
+                template: "./src/index.ejs",
+                "meta": {
+                    "charset": "UTF-8",
+                    "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+                },
+            }
+        ),
+        new SocialTags(
+            {
+                appUrl: "https://homefront.5dv.nyc",
+                facebook: {
+                    "og:url": "https://homefront.5dv.nyc/index.html",
+                    "og:type": "website",
+                    "og:title": "Homefront Supporter Series | December 22, 2019",
+                    "og:image": "./src/images/Homefront_OG_preview.jpg",
+                    "og:description": "The Homefront Supporter Series rallies OWL supporters crews to support city-based charities and help at-need neighbors.",
+                    "og:locale": "en_US",
+                },
+                twitter: {
+                    "twitter:card": "summary",
+                    "twitter:site": "@nyxl_venoms",
+                },
             }
         ),
         new MiniCssExtractPlugin({
