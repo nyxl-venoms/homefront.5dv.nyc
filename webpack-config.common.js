@@ -1,9 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SocialTags = require('social-tags-webpack-plugin');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
+
+const paths = [
+    '/index.html',
+];
 
 module.exports = {
     entry: {
@@ -18,6 +23,7 @@ module.exports = {
                 "meta": {
                     "charset": "UTF-8",
                     "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+                    "description": "The Homefront Supporter Series rallies OWL supporters crews to support city-based charities and help at-need neighbors."
                 },
             }
         ),
@@ -41,7 +47,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: devMode ? '[name].css' : '[name].[hash].css',
             chunkFilename: devMode ? '[name].css' : '[name].[hash].css',
-        })
+        }),
+        new SitemapPlugin('https://homefront.5dv.nyc', paths, {
+            fileName: 'sitemap.xml',
+            lastMod: true,
+        }),
     ],
     output: {
         filename: '[name].bundle.js',
