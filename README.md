@@ -6,7 +6,7 @@ This is the source code for the 5DV Homefront Charity Initiative website. It is 
 ## Build and run
 To view the site, you must build it first.
 
-Please ensure you have Node and NPM installed.
+Please ensure you have `Node` and `NPM` installed.
 
 1. Run `npm install` in the root directory to install all required packages.
 2. Run `npm run build` to build and pack the site. The compiled result will be located in the `dist/` directory.
